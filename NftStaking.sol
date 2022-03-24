@@ -203,6 +203,7 @@ contract Staking is IERC20 {
         }
 
         if (DepositerInfo[_staker].tokenIDs.length <= 0) {
+	    claim_coins(_staker);
             DepositerInfo[_staker].registered = false;
         }
         return (true);
